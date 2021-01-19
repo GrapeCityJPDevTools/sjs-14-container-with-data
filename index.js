@@ -14,9 +14,10 @@ import * as GC from "@grapecity/spread-sheets-designer";
 // リボンコンテナのカスタム情報
 import { ribbonConfig } from "./ribbonconfig.js";
 
+import { data } from "./data.js";
+
 // コンポーネント初期化
 GC.Spread.Common.CultureManager.culture("ja-jp");
-
 
 /****************************************
  *  処理内でグローバルに利用する変数の定義
@@ -27,5 +28,13 @@ var elemRibbon = document.getElementById("ribbonHost");
 
 // リボンコンテナ
 var ribbonContainer = new GC.Spread.Sheets.Designer.Designer(elemRibbon);
-var ribbonContainerSpread = ribbonContainer.getWorkbook();
-var ribbonContainerSheet = ribbonContainerSpread.getActiveSheet();
+var spread = ribbonContainer.getWorkbook();
+var sheet = spread.getActiveSheet();
+
+//描画処理の一時停止
+sheet.suspendPaint();
+
+spread.fromJSON(data);
+
+//描画処理の再開
+sheet.resumePaint();
