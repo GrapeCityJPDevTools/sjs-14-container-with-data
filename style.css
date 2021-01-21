@@ -17,8 +17,8 @@ div#spreadHost {
 /* リボンコンテナDOMサイズ設定 */
 div#ribbonHost {
   width: 1090px;
-  height: 550px;
-  border: 1px solid darkgray;
+  height: 500px;
+  border: 1px solid rgb(172, 154, 154);
 }
 
 input[type="button"] {

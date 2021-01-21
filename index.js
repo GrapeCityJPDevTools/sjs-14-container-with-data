@@ -29,12 +29,14 @@ var elemRibbon = document.getElementById("ribbonHost");
 // リボンコンテナ
 var ribbonContainer = new GC.Spread.Sheets.Designer.Designer(elemRibbon);
 var spread = ribbonContainer.getWorkbook();
-var sheet = spread.getActiveSheet();
-
-//描画処理の一時停止
-sheet.suspendPaint();
 
 spread.fromJSON(data);
 
+spread.options.allowUserZoom = false;
+var sheet = spread.getActiveSheet();
+sheet.zoom(0.9);
+//描画処理の一時停止
+//sheet.suspendPaint();
+
 //描画処理の再開
-sheet.resumePaint();
+//sheet.resumePaint();
