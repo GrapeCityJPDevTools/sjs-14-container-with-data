@@ -9,7 +9,7 @@ body {
 }
 /* SpreadJSコンテナDOMサイズ設定 */
 div#spreadHost {
-  width: 790px;
+  width: 1090px;
   height: 450px;
   border: 1px solid darkgray;
 }
