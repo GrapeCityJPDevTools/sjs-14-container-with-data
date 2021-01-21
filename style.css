@@ -9,14 +9,14 @@ body {
 }
 /* SpreadJSコンテナDOMサイズ設定 */
 div#spreadHost {
-  width: 1090px;
+  width: 790px;
   height: 450px;
   border: 1px solid darkgray;
 }
 
 /* リボンコンテナDOMサイズ設定 */
 div#ribbonHost {
-  width: 790px;
+  width: 1090px;
   height: 550px;
   border: 1px solid darkgray;
 }
