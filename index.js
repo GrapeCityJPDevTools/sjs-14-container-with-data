@@ -143,18 +143,21 @@ function display(flag) {
     // SpreadJS単体の表示
     showSpread();
   } else {
-    ribbonContainerSheet.setValue(
+    var sheet = ribbonContainerSpread.getActiveSheet();
+    sheet.reset();
+
+    sheet.setValue(
       0,
       0,
       "リボンとコンテキストメニューのカスタムが有効になっています。"
     );
-    ribbonContainerSheet.setValue(1, 0, "コンテキストメニューを開き、");
-    ribbonContainerSheet.setValue(
+    sheet.setValue(1, 0, "コンテキストメニューを開き、");
+    sheet.setValue(
       2,
       0,
       "独自に実装したメニュー項目「カスタムメニュー」の動作をご確認ください。"
     );
-    ribbonContainerSheet.setActiveCell(0, 0);
+    sheet.setActiveCell(0, 0);
 
     // カスタムしたリボンコンテナの表示
     ribbonContainer.setConfig(ribbonConfig);
